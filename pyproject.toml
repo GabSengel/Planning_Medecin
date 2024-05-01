@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "planning-medecin"
+version = "0.1.0"
+description = "Permet de générer le planning d'un centre hospitalier"
+authors = ["Gabin <gabin.sengel@hotmail.fr>", "Paul <paul.vidal12@yahou.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.2.2"
+rich = "^13.7.1"
+streamlit = "^1.33.0"
+typer = "^0.12.3"
+pyserde = "^0.16.1"
+pydantic = "^2.7.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.2"
+ruff = "^0.4.2"
+mypy = "^1.10.0"
+black = "^24.4.2"
+pytest-cov = "^5.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
