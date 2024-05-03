@@ -1,8 +1,9 @@
 import json
+import os
 from typer import Typer
 from rich.console import Console
 from rich.table import Table
-from .lib_hp import Medecin, PeriodeVacance, trouver_emploi_du_temps
+from planning_medecin.lib_hp import Medecin, PeriodeVacance, trouver_emploi_du_temps
 
 app = Typer()
 console = Console()
@@ -63,6 +64,11 @@ def solve(chemin: str):
     emploi_du_temps_df = trouver_emploi_du_temps(medecins, vacances, 10, 3)
     display_planning(emploi_du_temps_df)
 
+
+@app.command()
+def appli():
+    """Lance l'application Streamlit."""
+    os.system("streamlit run planning_medecin/app.py")
 
 def display_criteria(medecins, vacances, nb_jours, max_gardes):
     """Affiche les critères de planification dans une table formatée."""
